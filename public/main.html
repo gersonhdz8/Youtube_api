@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <script defer src="/public/main.js"></script>
     <title>YouTubeApi</title>
 </head>
 <body class="text-white bg-neutral-900 container ">
@@ -13,9 +14,9 @@
             <img src="/images/youtube (3).png" class="grid justify-center w-10 h-10 place-self-end">
             <p class="p-2 text-lg font-semibold font-gothic">YouTube</p>
         </div>
-        <div id="buscador" class="grid grid-flow-col col-span-2 justify-items-start relativo">                       
-            <input type="search" name="buscador" class="w-10/12 py-2 text-sm text-white border rounded-full border-neutral-600 bg-neutral-900 pl-9 focus:text-white hover:cursor-text focus:cursor-text cursor-text" placeholder="Search...">
-            <button type="submit" class="absolute px-2 py-2">
+        <div id="divBuscador" class="grid grid-flow-col col-span-2 justify-items-start relativo">                       
+            <input type="search" name="search" id="buscador" class="w-10/12 py-2 text-sm text-white border rounded-full border-neutral-600 bg-neutral-900 pl-9 focus:text-white hover:cursor-text focus:cursor-text cursor-text" value="" placeholder="Search...">
+            <button id="btnBuscar" type="input" class="absolute px-2 py-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>                  
@@ -61,8 +62,8 @@
             </div>
         </section> 
 
-        <section id="infoVideo" class="relative bottom-10 col-span-2 border border-neutral-400 rounded-3xl flex justify-center">
-            <div class="grid grid-cols-2 flex-col w-4/5  h-2/5  gap-1">
+        <section id="infoVideo" class="relative bottom-10 col-span-2  border-neutral-400 rounded-3xl flex justify-center">
+            <div class="grid grid-cols-2 flex-col w-4/5  h-2/5  gap-1 shadow-2xl drop-shadow-2xl shadow-black">
                 <div class="col-span-2">TITULOS</div>
                 <div class="gap-5">                    
                     <div class="inline-flex gap-4">
@@ -86,13 +87,20 @@
             </div>
         </section>
 
-        <section id="listVideos" class="col-start-3 row-span-3 row-start-2 border border-neutral-400  shadow-md shadow-black ">4</section>   
+        <section id="comentaros" class="col-start-3 row-span-3 row-start-2 border border-neutral-400  shadow-md shadow-black ">
+            <div class=" flex flex-col w-full h-full">
+                COMENTARIOS
+                <div class="flex gap-5">
+                    <p>coment</p>
+                </div>
+            </div>
+
+        </section>  
+        <section id="descripcion" class=" col-span-2 border border-neutral-400 shadow-md shadow-black h-full relative bottom-10 w-full ">
+            <div class="flex-col">Descripcion</div>
+            </section> 
                 
         
-    </div>
-    <div>
-        <section id="descripcion" class=" col-span-2 border border-neutral-400 shadow-md shadow-black w-auto h-full ">5</section>
-        <section id="comentarios" class=" col-span-2 border border-neutral-400 shadow-md shadow-black w-auto h-full ">6</section>
     </div>
     
 </body>
