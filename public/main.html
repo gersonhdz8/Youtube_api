@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>YouTubeApi</title>
+</head>
+<body class="text-white bg-neutral-900 container ">
+    <nav class="grid items-center w-screen h-12 grid-cols-4 shadow shadow-black drop-shadow-2xl">
+        <div id="logo" class="grid items-center grid-flow-col align-middle justify-items-center place-content-center place-items-center">
+            <img src="/images/youtube (3).png" class="grid justify-center w-10 h-10 place-self-end">
+            <p class="p-2 text-lg font-semibold font-gothic">YouTube</p>
+        </div>
+        <div id="buscador" class="grid grid-flow-col col-span-2 justify-items-start relativo">                       
+            <input type="search" name="buscador" class="w-10/12 py-2 text-sm text-white border rounded-full border-neutral-600 bg-neutral-900 pl-9 focus:text-white hover:cursor-text focus:cursor-text cursor-text" placeholder="Search...">
+            <button type="submit" class="absolute px-2 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>                  
+            </button>           
+        </div>        
+        <div class="inline-flex items-center gap-5 align-middle justify-self-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            </div>
+    </nav>
+    <div class="grid w-screen h-screen grid-cols-3 gap-1">
+        <section id="video" class="flex w-full h-full col-span-2 row-span-2  border-neutral-400 rounded-3xl items-start justify-center">
+            <div class="w-4/5 mb-0  h-5/6 border-slate-100 flex mt-10  ">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/WSSnTxhzjsk" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+            </div>    
+        </section>
+        
+        <section id="shorts" class=" overflow-auto w-full  shadow-black text-white shadow-inner ">
+            <div class="snap-x overflow-x-auto py-10 w-full h-full flex flex-row items-center align-middle shadow-inner">
+                <div class="overflow-hidden rounded w-full h-full snap-center scroll-ml-5 shrink-0 relative first:pl-6 last:pr-[calc(100%-21.5rem)] flex flex-col gap-2">
+                    <img class="object-cover aspect-video shrink-0 w-10/12 h-3/4 rounded-lg shadow-xl bg-white" src="/images/david-marcu-78A265wPiO4-unsplash.jpg">                    
+                    <span>Titulo 1</span>                    
+                    <span>Nvistas</span>         
+                </div>  
+                <div  class="overflow-hidden rounded w-11/12 h-full   scroll-ml-6 shrink-0 relative first:pl-6 last:pr-[calc(100%-21.5rem)] flex flex-col gap-2 snap-center">
+                    <img class="object-cover aspect-video relative shrink-0 w-10/12 h-3/4 rounded-lg shadow-xl bg-white" src="/images/adam-kool-ndN00KmbJ1c-unsplash.jpg"> 
+                    <span>Titulo 2</span>                    
+                    <span>Nvistas</span>                     
+                </div>
+                <div class="overflow-hidden rounded w-11/12 h-full  snap-center scroll-ml-6 shrink-0 relative first:pl-6 last:pr-[calc(100%-21.5rem)] flex flex-col gap-2">
+                    <img class="object-cover aspect-video relative shrink-0 w-10/12 h-3/4 rounded-lg shadow-xl bg-white" src="/images/lukasz-szmigiel-jFCViYFYcus-unsplash.jpg">
+                    <span>Titulo 3</span>                    
+                    <span>Nvistas</span>                     
+                </div> 
+                
+            </div>
+        </section> 
+
+        <section id="infoVideo" class="relative bottom-10 col-span-2 border border-neutral-400 rounded-3xl flex justify-center">
+            <div class="grid grid-cols-2 flex-col w-4/5  h-2/5  gap-1">
+                <div class="col-span-2">TITULOS</div>
+                <div class="gap-5">                    
+                    <div class="inline-flex gap-4">
+                        <div>Imagen</div>
+                        <div class="">
+                            <div>NombreCanal</div>
+                            <div>Segudiores</div>
+                        </div>
+                        <div class="">Suscribe</div>
+                    </div>
+                </div>
+                <div class="inline-flex gap-5 justify-items-center justify-self-center">
+                    <div>LIKES
+                        <span>1000</span>
+                    </div>
+                    <div>DISLIKES
+                        <span>1000</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="listVideos" class="col-start-3 row-span-3 row-start-2 border border-neutral-400  shadow-md shadow-black ">4</section>   
+                
+        
+    </div>
+    <div>
+        <section id="descripcion" class=" col-span-2 border border-neutral-400 shadow-md shadow-black w-auto h-full ">5</section>
+        <section id="comentarios" class=" col-span-2 border border-neutral-400 shadow-md shadow-black w-auto h-full ">6</section>
+    </div>
+    
+</body>
+</html>
