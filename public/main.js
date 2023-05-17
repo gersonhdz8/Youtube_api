@@ -79,41 +79,45 @@ async function searchVideo(url,options)
 
         for (i=0; i< resultado_.comments.length; i++)
         {
+            
+                
             let imgurl=resultado_.comments[i].author.avatar[0].url
             let commentId=resultado_.comments[i].author.title
             let commentCont=resultado_.comments[i].content
 
-            commentContent.innerHTML+=` <div  class="flex items-center gap-4 p-4">
+            commentContent.innerHTML+=` <div  class="flex items-center gap-4 p-4 text-white">
             <img class="w-12 h-12 rounded-full" src="${imgurl}">
-            <div class="flex flex-col">
-                <strong id="commentId" class="text-slate-900 text-sm font-medium dark:text-slate-200">${commentId}</strong>
-                <span id="commentContent" class="text-slate-500 text-sm font-medium dark:text-slate-400 text-justify w-full text-clip overflow-hidden">${commentCont}</span>
-            </div>`            
+            <div class="flex flex-col text-white">
+                <strong id="commentId" class="text-white text-sm font-semibold  italic ">${commentId}</strong>
+                <span id="commentContent" class="text-white text-sm text-justify w-full text-clip overflow-hidden">${commentCont}</span>
+            </div>`
+                
+
         }
 
         const urlRelacion = `https://youtube138.p.rapidapi.com/video/related-contents/?id=${videoId}&hl=en&gl=US`;
         const respuesta2 = await fetch(urlRelacion,options);
         const resultado2= await respuesta2.json();
 
-        for (i=0; i< resultado2.contents.length; i++)
+        for (i=0; i< resultado2.contents.length; i++)        
         {
-            let imgrela=resultado2.contens[i].video.thumbnails[0].url
-            let titleVideo=resultado2.contens[i].video.title
-            let vistas=(resultado2.contens[i].video.stats).toLocaleString()
+            let tipo=resultado2.contents[i].type
+            if (tipo=="video")
+            {
+                let imgrela=resultado2.contents[i].video.thumbnails[0].url
+            let titleVideo=resultado2.contents[i].video.title
+            let vistas=(resultado2.contents[i].video.stats.views).toLocaleString()
 
-            console.log(imgrela)
-            console.log(titleVideo)
-            console.log(vistas)
+            //console.log(imgrela)
+            //console.log(titleVideo)
+            //console.log(vistas)
             videoList.innerHTML+=`<div class="overflow-hidden rounded w-full h-full snap-center  shrink-0 relative first:pl-6 last:pr-[calc(100%-21.5rem)] flex flex-col gap-1 ">
-            <img class="object-cover aspect-video shrink-0 w-10/12 h-3/4 rounded-lg shadow-xl bg-white" src="${imgrela}">                    
+            <img class="object-cover aspect-video shrink-0 w-2/5 h-3/4 rounded-lg shadow-xl bg-white" src="${imgrela}">                    
             <span>${titleVideo}</span>                    
-            <span>${vistas}</span>         
-            </div>`            
-        }
-
-
-
-        
+            <span>${vistas} Vistas</span>         
+            </div>`       
+            }
+        }       
 
         
     } catch (error) {
@@ -121,26 +125,10 @@ async function searchVideo(url,options)
     }
 }
 
-async function searchVideoPropi(url,options)
-{
-
-}
 
 
 
 
-
-
-/*
-(async (url) => {
-    try {
-        const response = await fetch(searchVideo(), options);
-        const result = await response.json();
-        console.log(result.content);
-    } catch (error) {
-        console.error(error);
-    }
-})();*/
 
 
 
